@@ -5,7 +5,5 @@ import LeagueSubs.*;
 public class Main {
     public static void main(String[] Args) {
         MainTests.PopulateTeamA();
-
-        System.out.println();
     }
 }

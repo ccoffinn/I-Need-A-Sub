@@ -2,7 +2,6 @@
 package LeinsterLeague;
 
 public class Results {
-    private Player player;
     private String[] resultType = {"loss", "win", "draw"};
     private String result;
     private boolean color;
@@ -18,5 +17,23 @@ public class Results {
         player.updatePointTotal(resultIndex);
         this.color = color;
         this.isSub = isSub;
+    }
+
+    public String toString() {
+        // convert color bool to string
+        String colorString = "";
+        if (this.color) {
+            colorString = "White";
+        }
+        else {
+            colorString = "Black";
+        }
+
+        // convert isSub bool to string
+        String isSubString = "";
+        if (this.isSub) {
+            isSubString = " Sub";
+        }
+        return colorString + " " + this.result + isSubString;
     }
 }
