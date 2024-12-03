@@ -61,10 +61,104 @@ public class MainTests {
         // WE WILL NOT BE MAKING SUBS TO THIS TEAM SO ONLY NEED TO GENERATE PLAYERS FOR
         // THE ROUND 4 MATCH TEST
         Team gonzagaDiv1 = new Team(TeamName.Gonzaga, Division.Armstrong);
+        Player gp1 = new Player("Barnes, Oliver",1884);
+        Player gp2 = new Player("Bourached, Anthony",2021);
+        Player gp3 = new Player("Carroll, Peter",2150);
+        Player gp4 = new Player("Casey, Eoghan",1908);
+        Player gp5 = new Player("Collins, Sam E.",2456);
+        Player gp6 = new Player("Crowley, James",2164);
+        Player gp7 = new Player("Delaney, Killian",2254);
+        Player gp8 = new Player("Freeman, Gordon",2007);
+        gonzagaDiv1.players.add(gp1);
+        gonzagaDiv1.players.add(gp2);
+        gonzagaDiv1.players.add(gp3);
+        gonzagaDiv1.players.add(gp4);
+        gonzagaDiv1.players.add(gp5);
+        gonzagaDiv1.players.add(gp6);
+        gonzagaDiv1.players.add(gp7);
+        gonzagaDiv1.players.add(gp8);
 
         // GENERATE TEAM C
         // WE WILL MAKE PLAYERS AND 3 ROUNDS OF RESULTS TO DETERMINE BEST SUB
         Team rathminesDiv2 = new Team(TeamName.Rathmines, Division.Heidenfeld);
+        Player rp1 = new Player("Aherne, John P.",1882);
+        Player rp2 = new Player("Bermingham, Tony",1848);
+        Player rp3 = new Player("Connell, Kris",1813);
+        Player rp4 = new Player("Cosgrove, Pat",1760);
+        Player rp5 = new Player("Goggins, David",1862);
+        Player rp6 = new Player("Greenan, Darragh",1621);
+        Player rp7 = new Player("Kennedy, Isaac",1520);
+        Player rp8 = new Player("Lynch, Peter J.",1719);
+        rathminesDiv2.players.add(rp1);
+        rathminesDiv2.players.add(rp2);
+        rathminesDiv2.players.add(rp3);
+        rathminesDiv2.players.add(rp4);
+        rathminesDiv2.players.add(rp5);
+        rathminesDiv2.players.add(rp6);
+        rathminesDiv2.players.add(rp7);
+        rathminesDiv2.players.add(rp8);
+
+        Results rp1Result = new Results(0, false, false, rp1);
+        Results rp2Result = new Results(1, true, false, rp1);
+        Results rp3Result = new Results(2, true, false, rp1);
+        rp1.resultsList.add(rp1Result);
+        rp1.resultsList.add(rp2Result);
+        rp1.resultsList.add(rp3Result);
+
+        rp1Result = new Results(0, false, false, rp2);
+        rp2Result = new Results(0, true, false, rp2);
+        rp3Result = new Results(2, false, false, rp2);
+        rp2.resultsList.add(rp1Result);
+        rp2.resultsList.add(rp2Result);
+        rp2.resultsList.add(rp3Result);
+
+        rp1Result = new Results(1, false, false, rp3);
+        rp2Result = new Results(1, false, false, rp3);
+        rp3Result = new Results(1, true, false, rp3);
+        rp3.resultsList.add(rp1Result);
+        rp3.resultsList.add(rp2Result);
+        rp3.resultsList.add(rp3Result);
+
+        rp1Result = new Results(2, true, false, rp4);
+        rp2Result = new Results(2, true, false, rp4);
+        rp3Result = new Results(0, true, false, rp4);
+        rp4.resultsList.add(rp1Result);
+        rp4.resultsList.add(rp2Result);
+        rp4.resultsList.add(rp3Result);
+
+        rp1Result = new Results(2, false, false, rp5);
+        rp2Result = new Results(1, false, false, rp5);
+        rp3Result = new Results(2, true, false, rp5);
+        rp5.resultsList.add(rp1Result);
+        rp5.resultsList.add(rp2Result);
+        rp5.resultsList.add(rp3Result);
+
+        rp1Result = new Results(2, false, false, rp6);
+        rp2Result = new Results(1, false, false, rp6);
+        rp3Result = new Results(1, false, false, rp6);
+        rp6.resultsList.add(rp1Result);
+        rp6.resultsList.add(rp2Result);
+        rp6.resultsList.add(rp3Result);
+
+        rp1Result = new Results(0, false, false, rp7);
+        rp2Result = new Results(1, true, false, rp7);
+        rp3Result = new Results(2, true, false, rp7);
+        rp7.resultsList.add(rp1Result);
+        rp7.resultsList.add(rp2Result);
+        rp7.resultsList.add(rp3Result);
+
+        rp1Result = new Results(2, true, false, rp8);
+        rp2Result = new Results(2, true, false, rp8);
+        rp3Result = new Results(2, true, false, rp8);
+        rp8.resultsList.add(rp1Result);
+        rp8.resultsList.add(rp2Result);
+        rp8.resultsList.add(rp3Result);
+
+        //////////////////////////////////////////////
+
+                // TESTS TO RUN //
+
+        //////////////////////////////////////////////
 
         // TEST 1: display team A and it's players
         System.out.println("Created Team A: " + rathminesDiv1);

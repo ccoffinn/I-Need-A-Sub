@@ -37,7 +37,7 @@ public class Match {
         else if (division == Division.values()[2] || division == Division.values()[3]) {
             boards = 6;
         }
-        if (division == Division.values()[4] || division == Division.values()[6]) {
+        if (division == Division.values()[4] || division == Division.values()[5]) {
             boards = 5;
         }
 
@@ -93,7 +93,7 @@ public class Match {
     }
 
     public String ToString() {
-        return this.division + "\n" + this.teamA + " vs " + this.teamB + "\n";
+return this.division + "\n" + this.teamA + " vs " + this.teamB + "\n";
     }
 
 
