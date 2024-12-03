@@ -5,7 +5,7 @@ public class Results {
     private String[] resultType = {"loss", "win", "draw"};
     private String result;
     private boolean color;
-    private boolean isSub;
+    public boolean isSub;
 
     // default constructor
     public Results() {

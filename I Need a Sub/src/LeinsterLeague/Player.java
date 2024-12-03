@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Player {
     private String name;
-    private int rating;
+    public int rating;
     public double totalPoints = 0;
     public ArrayList<Results> resultsList;
     public int gamesPlayed;
@@ -32,7 +32,7 @@ public class Player {
 
     public String toString() {
         gamesPlayed = resultsList.size();
-        String message1 = this.name + " " + this.rating + ", " + this.totalPoints +"/" + this.gamesPlayed + "\n";
+        String message1 = this.name + " " + this.rating + ", " + this.totalPoints + "/" + this.gamesPlayed + "\n";
         String message2 = "";
 
         // loop for all players results
