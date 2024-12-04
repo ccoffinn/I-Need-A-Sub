@@ -2,6 +2,7 @@
 package LeinsterLeague;
 
 import java.util.ArrayList;
+import LeagueSubs.*;
 
 public class Match {
     private Division division;
@@ -46,27 +47,26 @@ public class Match {
 
     // used to declare team in advance of match, and make calls to league rules to check
     // if team is valid
-    public void DeclareTeam(ArrayList<Player> thePlayers) {
-        // TODO try gateway expression players=boards
-
-        Player declaredPlayers[] = new Player[this.boards];
-        for (int i = 0; i < this.boards; i++) {
-            declaredPlayers[i] = thePlayers.get(i);
+    public void DeclareTeam(ArrayList<Player> thePlayers) throws Exception {
+        // check correct number of players declared
+        if (thePlayers.size() > this.boards) {
+            throw new Exception("You have declared too many players! Please declare " + this.boards + " or less players instead.");
         }
-
-        // TODO call rules checks
+        // validate team
+        LeagueRules.checkRatingRules(thePlayers);
+        LeagueRules.checkSubGames(thePlayers);
     }
 
     // team A is home, team B is away. Home team black on odd colour boards
-    public void EnterResults(ArrayList<Player> playersTeamA, ArrayList<Player> playersTeamB, ArrayList<Integer> results, ArrayList<Boolean> subBoards) {
+    public void EnterResults(ArrayList<Player> playersTeamA, ArrayList<Player> playersTeamB, ArrayList<Integer> results, ArrayList<Boolean> subBoards) throws Exception {
         boolean isBlack = true;
 
-        for (int i = 0; i < playersTeamA.size(); i++) {
-            // generate results for home team
+        for (int i = 0; i < results.size(); i++) {
+            // generate results for home team who always have Black on board one.
             Results homeResult = new Results(results.get(i), isBlack, subBoards.get(i), playersTeamA.get(i));
             playersTeamA.get(i).resultsList.add(homeResult);
 
-            // toggle board colour
+            // toggle board colour, as the next result will always be the opposite board colour
             if (isBlack) {
                 isBlack = false;
             }
@@ -88,14 +88,9 @@ public class Match {
             Results awayResult = new Results(reverseResult, isBlack, subBoards.get(i), playersTeamB.get(i));
             playersTeamB.get(i).resultsList.add(awayResult);
         }
-
-
     }
 
     public String ToString() {
-return this.division + "\n" + this.teamA + " vs " + this.teamB + "\n";
+        return this.division + "\n" + this.teamA + " vs " + this.teamB + "\n";
     }
-
-
-
 }

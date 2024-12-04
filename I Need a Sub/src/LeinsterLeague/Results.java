@@ -3,8 +3,8 @@ package LeinsterLeague;
 
 public class Results {
     private String[] resultType = {"loss", "win", "draw"};
-    private String result;
-    private boolean color;
+    public String result;
+    public boolean color;
     public boolean isSub;
 
     // default constructor
