@@ -50,7 +50,7 @@ public class Match {
     public void DeclareTeam(ArrayList<Player> thePlayers) throws Exception {
         // check correct number of players declared
         if (thePlayers.size() > this.boards) {
-            throw new Exception("You have declared too many players! Please declare " + this.boards + " or less players instead.");
+            throw new Exception("Violation: You have declared too many players! Please declare " + this.boards + " or less players instead.");
         }
         // validate team
         LeagueRules.checkRatingRules(thePlayers);
@@ -59,19 +59,19 @@ public class Match {
 
     // team A is home, team B is away. Home team black on odd colour boards
     public void EnterResults(ArrayList<Player> playersTeamA, ArrayList<Player> playersTeamB, ArrayList<Integer> results, ArrayList<Boolean> subBoards) throws Exception {
-        boolean isBlack = true;
+        boolean isWhite = false;
 
         for (int i = 0; i < results.size(); i++) {
             // generate results for home team who always have Black on board one.
-            Results homeResult = new Results(results.get(i), isBlack, subBoards.get(i), playersTeamA.get(i));
+            Results homeResult = new Results(results.get(i), isWhite, subBoards.get(i), playersTeamA.get(i));
             playersTeamA.get(i).resultsList.add(homeResult);
 
             // toggle board colour, as the next result will always be the opposite board colour
-            if (isBlack) {
-                isBlack = false;
+            if (isWhite) {
+                isWhite = false;
             }
             else {
-                isBlack = true;
+                isWhite = true;
             }
 
             // result for one team on given board will always be reverse of
@@ -85,7 +85,7 @@ public class Match {
             }
 
             // generate results for away team
-            Results awayResult = new Results(reverseResult, isBlack, subBoards.get(i), playersTeamB.get(i));
+            Results awayResult = new Results(reverseResult, isWhite, subBoards.get(i), playersTeamB.get(i));
             playersTeamB.get(i).resultsList.add(awayResult);
         }
     }

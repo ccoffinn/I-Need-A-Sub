@@ -13,9 +13,9 @@ public class LeagueRules {
     public static void checkRatingRules(ArrayList<Player> playerA) throws Exception {
         for (int i = playerA.size() - 1; i > 0; i--) {
             for (int j = playerA.size() - 1; i > 0; i--) {
-                if (playerA.get(i).rating - playerA.get(j).rating > maxRatingGap) {
-                    throw new Exception("150 point rule violation identified between player " + playerA.get(i)
-                    + " and " + playerA.get(j));
+                if (playerA.get(j).rating - playerA.get(i).rating > maxRatingGap) {
+                    throw new Exception("Violation: 150 point rule violation identified between player:\n" + playerA.get(i)
+                    + "\nand:\n" + playerA.get(j));
                 }
             }
         }
@@ -33,8 +33,8 @@ public class LeagueRules {
                     playerSubCount++;
                 }
 
-                if (playerSubCount > maxGamesAsSub) {
-                    throw new Exception("This player has already played " + playerSubCount + "games as a sub. The Maximum is 3." );
+                if (playerSubCount >= maxGamesAsSub) {
+                    throw new Exception("Violation: " + playerA.get(i).toString() + " \n Has already played " + playerSubCount + " games as a sub. The Maximum is 3." );
                 }
             }
         }
