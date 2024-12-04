@@ -93,4 +93,20 @@ public class Match {
     public String ToString() {
         return this.division + "\n" + this.teamA + " vs " + this.teamB + "\n";
     }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public Team getTeamA() {
+        return teamA;
+    }
+
+    public Team getTeamB() {
+        return teamB;
+    }
+
+    public int getBoards() {
+        return boards;
+    }
 }

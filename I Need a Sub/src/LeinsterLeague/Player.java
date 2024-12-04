@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     public int rating;
-    public double totalPoints = 0;
+    private double totalPoints = 0;
     public ArrayList<Results> resultsList;
-    public int gamesPlayed;
+    private int gamesPlayed;
 
     // default constructor
     public Player() {
@@ -40,5 +40,17 @@ public class Player {
             message2 += this.resultsList.get(i).toString() + "\n";
         }
         return message1 + message2;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getTotalPoints() {
+        return totalPoints;
+    }
+
+    public int getGamesPlayed() {
+        return gamesPlayed;
     }
 }

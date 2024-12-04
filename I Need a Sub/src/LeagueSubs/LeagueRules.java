@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class LeagueRules {
     private static int maxRatingGap = 150;
-    public static int maxGamesAsSub = 3;
+    private static int maxGamesAsSub = 3;
 
     // a player cannot be on a higher board than another player if there
     // is a gap greater than 150 points between their ratings.
@@ -38,5 +38,13 @@ public class LeagueRules {
                 }
             }
         }
+    }
+
+    public static int getMaxGamesAsSub() {
+        return maxGamesAsSub;
+    }
+
+    public static int getMaxRatingGap() {
+        return maxRatingGap;
     }
 }

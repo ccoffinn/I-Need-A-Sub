@@ -34,7 +34,7 @@ public class BestSub {
                     if (teamA.players.get(i).resultsList.get(j).isSub) {
                         playerSubScore += wasSub;
                     }
-                    if (teamA.players.get(i).resultsList.get(j).color == color) {
+                    if (teamA.players.get(i).resultsList.get(j).isColor() == color) {
                         playerSubScore += sameColor;
                     }
                 }
@@ -45,7 +45,7 @@ public class BestSub {
                     if (teamA.players.get(i).resultsList.get(j).isSub) {
                         playerSubScore += wasSub;
                     }
-                    if (teamA.players.get(i).resultsList.get(j).color == color) {
+                    if (teamA.players.get(i).resultsList.get(j).isColor() == color) {
                         playerSubScore += sameColor;
                     }
                 }

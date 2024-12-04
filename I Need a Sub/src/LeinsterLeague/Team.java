@@ -39,4 +39,12 @@ public class Team {
 
         return message1 + message2 + message3;
     }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public TeamName getName() {
+        return name;
+    }
 }
