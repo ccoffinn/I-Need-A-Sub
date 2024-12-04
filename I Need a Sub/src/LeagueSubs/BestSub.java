@@ -2,19 +2,21 @@
 package LeagueSubs;
 import LeinsterLeague.*;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class BestSub {
 
     public static String FindBestSub(Team teamA, boolean color) {
-        int gameWon = 2;
+        // weights for my sub score
+        int gameWon = 3;
         int gameDrawn = 1;
         int sameColor = 1;
         int wasSub = 1;
+
+        // used to display final list to screen
+        int subsDisplayed = 3;
         ArrayList<Integer> subScore;
         ArrayList<Integer> subIndex;
         String displayBestSubs = "";
-
         subScore = new ArrayList<>();
         subIndex = new ArrayList<>();
 
@@ -32,7 +34,7 @@ public class BestSub {
                     if (teamA.players.get(i).resultsList.get(j).isSub) {
                         playerSubScore += wasSub;
                     }
-                    else if (teamA.players.get(i).resultsList.get(j).color == color) {
+                    if (teamA.players.get(i).resultsList.get(j).color == color) {
                         playerSubScore += sameColor;
                     }
                 }
@@ -43,7 +45,7 @@ public class BestSub {
                     if (teamA.players.get(i).resultsList.get(j).isSub) {
                         playerSubScore += wasSub;
                     }
-                    else if (teamA.players.get(i).resultsList.get(j).color == color) {
+                    if (teamA.players.get(i).resultsList.get(j).color == color) {
                         playerSubScore += sameColor;
                     }
                 }
@@ -55,7 +57,7 @@ public class BestSub {
 
         // store the index of the three best subs
         int prevMaxValue = 9999;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < subsDisplayed; i++) {
             int maxValue = 0;
             int maxIndex = -1; // for non valid index
             for (int j = 0; j < subScore.size(); j++) {
@@ -76,8 +78,9 @@ public class BestSub {
         for (int i = 0; i < teamA.players.size(); i++) {
             for (int j = 0; j < subIndex.size(); j++) {
                 if (i == subIndex.get(j)) {
+                    // update string
                     displayBestSubs += teamA.players.get(i).toString() + " Subscore: "
-                    + subScore.get(i) + "\n";
+                            + subScore.get(i) + "\n";
                 }
             }
         }

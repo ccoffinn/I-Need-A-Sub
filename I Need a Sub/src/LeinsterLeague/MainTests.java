@@ -4,7 +4,7 @@ import LeagueSubs.*;
 
 public class MainTests {
 
-    public static void PopulateTeamA() {
+    public static void RunTests() {
         // GENERATE TEAM A WITH 3 ROUNDS OF RESULTS //
 
         Team rathminesDiv1 = new Team(TeamName.Rathmines, Division.Armstrong);
@@ -137,8 +137,8 @@ public class MainTests {
         rp2.resultsList.add(rp2Result);
         rp2.resultsList.add(rp3Result);
 
-        rp1Result = new Results(1, false, false, rp3);
-        rp2Result = new Results(1, false, false, rp3);
+        rp1Result = new Results(1, false, true, rp3);
+        rp2Result = new Results(1, false, true, rp3);
         rp3Result = new Results(1, true, false, rp3);
         rp3.resultsList.add(rp1Result);
         rp3.resultsList.add(rp2Result);
