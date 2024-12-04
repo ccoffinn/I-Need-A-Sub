@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class BestSub {
 
-    public String FindBestSub(Team teamA, boolean color) {
+    public static String FindBestSub(Team teamA, boolean color) {
         int gameWon = 2;
         int gameDrawn = 1;
         int sameColor = 1;
@@ -24,7 +24,7 @@ public class BestSub {
             int playerSubScore = 0;
 
             // check player [i] results
-            for (int j = 0; j < teamA.players.get(i).resultsList.size(); i++ ) {
+            for (int j = 0; j < teamA.players.get(i).resultsList.size(); j++ ) {
                 // add points if they won
                 if (teamA.players.get(i).resultsList.get(j).result == "win") {
                     playerSubScore += gameWon;
@@ -58,7 +58,7 @@ public class BestSub {
         for (int i = 0; i < 3; i++) {
             int maxValue = 0;
             int maxIndex = -1; // for non valid index
-            for (int j = 0; j < subScore.size(); i++) {
+            for (int j = 0; j < subScore.size(); j++) {
                 // update maxValue to remove highest value from next loop
                 if (subScore.get(j) < prevMaxValue) {
                     if (subScore.get(j) > maxValue) {

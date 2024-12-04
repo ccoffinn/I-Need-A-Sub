@@ -1,5 +1,6 @@
 // Student Name/ID: Sarah Scott B00165892
 package LeinsterLeague;
+import LeagueSubs.*;
 
 public class MainTests {
 
@@ -46,15 +47,39 @@ public class MainTests {
 
         Player moranStephan= new Player("Moran, Stephan", 2154);
         rathminesDiv1.players.add(moranStephan);
+        Results ms1Result = new Results(0, false, false, moranStephan);
+        Results ms2Result = new Results(1, true, false, moranStephan);
+        Results ms3Result = new Results(2, true, false, moranStephan);
+        moranStephan.resultsList.add(ms1Result);
+        moranStephan.resultsList.add(ms2Result);
+        moranStephan.resultsList.add(ms3Result);
 
         Player oCuilleanainOisin = new Player("O'Cuilleanain, Oisin", 2164);
         rathminesDiv1.players.add(oCuilleanainOisin);
+        Results oo1Result = new Results(0, false, false, oCuilleanainOisin);
+        Results oo2Result = new Results(1, true, false, oCuilleanainOisin);
+        Results oo3Result = new Results(2, true, false, oCuilleanainOisin);
+        oCuilleanainOisin.resultsList.add(oo1Result);
+        oCuilleanainOisin.resultsList.add(oo2Result);
+        oCuilleanainOisin.resultsList.add(oo3Result);
 
         Player scottSarah = new Player("Scott, Sarah", 1970);
         rathminesDiv1.players.add(scottSarah);
+        Results ss1Result = new Results(1, false, false, scottSarah);
+        Results ss2Result = new Results(1, true, false, scottSarah);
+        Results ss3Result = new Results(1, true, false, scottSarah);
+        scottSarah.resultsList.add(ss1Result);
+        scottSarah.resultsList.add(ss2Result);
+        scottSarah.resultsList.add(ss3Result);
 
         Player smithDerek = new Player("Smith, Derek", 1936);
         rathminesDiv1.players.add(smithDerek);
+        Results sd1Result = new Results(0, false, false, smithDerek);
+        Results sd2Result = new Results(1, true, false, smithDerek);
+        Results sd3Result = new Results(2, true, false, smithDerek);
+        smithDerek.resultsList.add(sd1Result);
+        smithDerek.resultsList.add(sd2Result);
+        smithDerek.resultsList.add(sd3Result);
 
 
         // GENERATE TEAM B //
@@ -161,9 +186,10 @@ public class MainTests {
         //////////////////////////////////////////////
 
         // TEST 1: display team A and it's players
-        System.out.println("Created Team A: " + rathminesDiv1);
+        // System.out.println("Created Team A: " + rathminesDiv1);
 
-        // TEST 2: find best substitute for round 4 match
+        // TEST 2: find best substitute for round 4 on board 8 (white)
+        // System.out.println(BestSub.FindBestSub(rathminesDiv2, true));
 
         // TEST 3: declare legal team
 
@@ -172,15 +198,11 @@ public class MainTests {
         // TEST 5: generate round 4 results
         Match round4 = new Match(Division.Armstrong, rathminesDiv1, gonzagaDiv1);
 
-        // TEST 6: display updated team information
-        System.out.println("Updated Team A: " + rathminesDiv1);
-        System.out.println("Updated Team C: " + rathminesDiv2);
+        // TEST 6: find best sub after team info updated
 
-        // TEST 7: find best sub after team info updated
+        // TEST 7: declare legal sub
 
-        // TEST 8: declare legal sub
-
-        // TEST 9: declare illegal sub
+        // TEST 8: declare illegal sub
 
 
     }
